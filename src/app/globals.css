@@ -16,7 +16,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #faeffc;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +24,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+::selection {
+  background-color: #c7a6df;
+  color: #161414;
+}
+
+::-moz-selection {
+  background-color: #c7a6df;
+  color: #161414;
 }
