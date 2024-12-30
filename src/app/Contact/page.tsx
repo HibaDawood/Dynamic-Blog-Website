@@ -18,17 +18,35 @@ export default function Example() {
       ></div>
       <div className="mx-auto max-w-2xl text-center">
         <h2
-          className="text-balance text-4xl font-semibold tracking-tight 
-         -mt-20 text-myDarkestPr sm:text-5xl"
+          style={{
+            fontFamily: "Lobster",
+            fontWeight: 500,
+          }}
+          className="text-balance text-4xl font-semibold tracking-wide 
+         -mt-20 xs:-mt-10 text-myDarkestPr sm:text-5xl"
         >
           Contact Us
         </h2>
-        <p className="mt-2 text-lg/8 text-myDarkPr">
+        <p
+          style={{
+            fontFamily: "Saira",
+            fontWeight: 500,
+          }}
+          className="mt-2 text-lg/8 text-myDarkPr"
+        >
           Reach out to us for inquiries, support, or collaborations—your
           connection matters!
         </p>
       </div>
-      <form action="#" method="POST" className="mx-auto max-w-xl sm:mt-20">
+      <form
+        style={{
+          fontFamily: "Saira",
+          fontWeight: 500,
+        }}
+        action="#"
+        method="POST"
+        className="mx-auto max-w-xl sm:mt-20"
+      >
         <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 ">
           <div>
             <label
@@ -138,7 +156,8 @@ export default function Example() {
                   </select>
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end
+                    className="pointer-events-none col-start-1 row-start-1 mr-2 xs:mx-auto size-5 self-center
+                     justify-self-end
                      text-gray-500 sm:size-4"
                   />
                 </div>

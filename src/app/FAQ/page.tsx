@@ -1,52 +1,71 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { ChevronUp, ChevronDown } from 'lucide-react'
+import { useState } from "react";
+import { ChevronUp, ChevronDown } from "lucide-react";
 
 type FAQItem = {
-  question: string
-  answer: string
-}
+  question: string;
+  answer: string;
+};
 
 const faqs: FAQItem[] = [
   {
     question: "What is AI?",
-    answer: " AI is the development of computer systems that can perform tasks requiring human intelligence, like learning, reasoning, and problem-solving."
+    answer:
+      " AI is the development of computer systems that can perform tasks requiring human intelligence, like learning, reasoning, and problem-solving.",
   },
   {
     question: "How is AI used daily?",
-    answer: "AI powers virtual assistants, personalized recommendations, smart devices, and autonomous vehicles."
+    answer:
+      "AI powers virtual assistants, personalized recommendations, smart devices, and autonomous vehicles.",
   },
   {
     question: "What is Machine Learning?",
-    answer: "Machine Learning is a subset of AI where systems learn from data to improve performance over time."
+    answer:
+      "Machine Learning is a subset of AI where systems learn from data to improve performance over time.",
   },
   {
     question: "What are AI's benefits?",
-    answer: "AI enhances efficiency, automates repetitive tasks, improves decision-making, and personalizes user experiences."
+    answer:
+      "AI enhances efficiency, automates repetitive tasks, improves decision-making, and personalizes user experiences.",
   },
   {
     question: "What are AI's challenges",
-    answer: "AI faces issues like bias, ethical concerns, data dependency, and energy use."
+    answer:
+      "AI faces issues like bias, ethical concerns, data dependency, and energy use.",
   },
   {
     question: "What is the future of AI?",
-    answer: "AI is advancing toward greater autonomy, ethical use, and enhanced problem-solving."
+    answer:
+      "AI is advancing toward greater autonomy, ethical use, and enhanced problem-solving.",
   },
-]
+];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleQuestion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-   
     <div className="w-full max-w-2xl mx-auto p-4 bg-white rounded-2xl shadow-md my-10">
-      <h2 className="text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-      <div className="space-y-4">
+      <h2
+        style={{
+          fontFamily: "Lobster",
+          fontWeight: 500,
+        }}
+        className="text-4xl font-bold text-center tracking-wide mb-8"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div
+        style={{
+          fontFamily: "Saira",
+          fontWeight: 500,
+        }}
+        className="space-y-4"
+      >
         {faqs.map((faq, index) => (
           <div key={index} className="border border-gray-200 rounded-lg">
             <button
@@ -71,7 +90,5 @@ export default function FAQ() {
         ))}
       </div>
     </div>
-  
-  )
+  );
 }
-

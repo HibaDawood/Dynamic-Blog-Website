@@ -1,109 +1,91 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from "react";
 import { GiTechnoHeart } from "react-icons/gi";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div>
-        <nav className="bg-myDarkPr border-gray-200">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a
-      href="https://flowbite.com/"
-      className="flex items-center space-x-3 rtl:space-x-reverse"
+    <nav
+      style={{
+        fontFamily: "Saira",
+        fontWeight: 500,
+      }}
+      className="bg-myDarkPr border-gray-200 dark:bg-gray-900"
     >
-      <span className='text-myWhite text-3xl'>
-      <GiTechnoHeart/>
-      </span>
-      
-      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-myWhite text-myWhite">
-      Techno Turing
-      </span>
-    </a>
-    <button
-      data-collapse-toggle="navbar-default"
-      type="button"
-      className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm
-       text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2
-        focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      aria-controls="navbar-default"
-      aria-expanded="false"
-    >
-      <span className="sr-only">Open main menu</span>
-      <svg
-        className="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 17 14"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M1 1h15M1 7h15M1 13h15"
-        />
-      </svg>
-    </button>
-    <div className="bg-myDrBlue text-myWhite hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg
-       md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-        <li>
-          <a
-            href="/"
-            className="block py-2 px-3 rounded md:bg-transparent md:p-0
-               dark:text-myWhite hover:text-myDarkestPr md:dark:text-myWhite text-[19px] font-semibold"
-            aria-current="page"
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <span className="text-myWhite text-3xl">
+            <GiTechnoHeart />
+          </span>
+          <span
+            className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-myDarkestPr
+           text-myWhite"
           >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Blogs"
-            className="block py-2 px-3 text-myWhite hover:text-myDarkestPr rounded md:border-0
-              md:p-0 dark:text-myWhite
-              text-[19px] font-semibold"
+            Techno Blogs
+          </span>
+        </a>
+        <button
+          onClick={toggleMenu}
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm
+           text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2
+            focus:ring-myDarkestPr dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default"
+          aria-expanded={isMenuOpen}
+        >
+          <span className="sr-only">Toggle menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
           >
-            Blogs
-          </a>
-        </li>
-        <li>
-          <a
-            href="/About"
-            className="block py-2 px-3 text-myWhite rounded md:border-0
-              md:p-0 dark:text-myWhite hover:text-myDarkestPr
-               text-[19px] font-semibold"
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } w-full md:block md:w-auto`}
+          id="navbar-default"
+        >
+          <ul
+            className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg
+           bg-myLightPr md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent
+            dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700"
           >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Contact"
-            className="block py-2 px-3 text-myWhite rounded md:border-0
-              md:p-0 dark:text-myWhite
-              hover:text-myDarkestPr text-[19px] font-semibold"
-          >
-            Contact
-          </a>
-        </li>
-        <li>
-          <a
-            href="/FAQ"
-            className="block py-2 px-3 text-myWhite rounde hover:text-myDarkestPr md:border-0
-            md:p-0 dark:text-myWhite
-           text-[19px] font-semibold"
-          >
-            FAQ
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+            {["Home", "Blogs", "About", "Contact", "FAQ"].map((item) => (
+              <li key={item}>
+                <a
+                  href={item === "Home" ? "/" : `/${item}`}
+                  className="block py-2 px-3 text-myWhite rounded
+                   hover:bg-gray-100 md:hover:bg-transparent md:border-0
+                    md:hover:text-myDarkestPr md:p-0 dark:text-myDarkestPr
+                     md:dark:hover:text-myDarkestPr dark:hover:bg-gray-700
+                      dark:hover:text-white md:dark:hover:bg-transparent text-base sm:text-lg font-semibold"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
