@@ -6,7 +6,7 @@ import CommentSection from "@/app/Components/CommentSection";
 
 const Post1 = () => {
   return (
-    <div className="mx-72">
+    <div className="xs:mx-4 sm:mx-8 md:mx-16 l:mx-72 ">
       {/* Post 1 */}
       <h1
         style={{
