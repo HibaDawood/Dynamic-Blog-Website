@@ -24,7 +24,7 @@ const Navbar = () => {
             <GiTechnoHeart />
           </span>
           <span
-            className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-myDarkestPr
+            className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap
            text-myWhite"
           >
             Techno Blogs
