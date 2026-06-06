@@ -73,8 +73,8 @@ const Navbar = () => {
                   href={item === "Home" ? "/" : `/${item}`}
                   className="block py-2 px-3 text-myWhite rounded
                    hover:bg-gray-100 md:hover:bg-transparent md:border-0
-                    md:hover:text-myDarkestPr md:p-0 dark:text-myDarkestPr
-                     md:dark:hover:text-myDarkestPr dark:hover:bg-gray-700
+                    md:hover:text-myDarkestPr md:p-0
+                      dark:hover:bg-gray-700
                       dark:hover:text-white md:dark:hover:bg-transparent text-base sm:text-lg font-semibold"
                 >
                   {item}
